@@ -48,6 +48,7 @@ def generate_closed_book_format(data_path, only_english, keep_markup, output_pat
                         question_text += extracted_text
                 if len(question_text) > 0:
                     for answer in question["Answers"]:
+                        answer_text = None
                         if "text_markup" in answer.keys():
                             answer_text = extract_text(
                                 answer["text_markup"], keep_markup
